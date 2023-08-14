@@ -1,0 +1,34 @@
+[project]
+name = "better-jupyterhub-ssh"
+description = "A reverse SSH proxy for integration with jupyterhub installations"
+readme = "README.md"
+requires-python = ">=3.6"
+authors = [ 
+    {name = "Alexander Auras", email = "33501357+AlexanderAuras@users.noreply.github.com"}
+]
+maintainers = []
+keywords = [ "SSH", "reverse-proxy", "jupyter-hub" ]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: Jupyter",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: System :: Networking",
+    "Typing :: Typed"
+]
+dynamic = ["version", "dependencies"]
+
+[project.scripts]
+jupyter_ssh_proxy = "better_jupyterhub_ssh.main:main"
+
+[build-system]
+requires = [
+    "setuptools~=67.6.0", 
+    "setuptools-scm[toml]~=7.1.0"
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+dependencies = {file = "requirements.txt"}
+version = {attr = "better_jupyterhub_ssh.VERSION"}
