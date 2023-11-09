@@ -1,2 +1,2 @@
 aiohttp~=3.8.5
-asyncssh==2.13.2
+asyncssh==2.14.1
